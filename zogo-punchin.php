@@ -21,18 +21,18 @@ define( 'ZOGO_PUNCHIN_URL', plugins_url( '', __FILE__ ) );
 ////////////////////////
 
 if ( ! class_exists( 'Pronamic_Base_Autoload' ) )
-    include ZOGO_PUNCHIN_ROOT . '/pronamic-framework/Pronamic/Base/Autoload.php';
+    include( ZOGO_PUNCHIN_ROOT . '/pronamic-framework/Pronamic/Base/Autoload.php' );
 
 $autoload = Pronamic_Base_Autoload::get_instance();
 
-$autoload->register_components( [
+$autoload->register_components( array( 
     "Pronamic\\Base" => ZOGO_PUNCHIN_ROOT . '/pronamic-framework',
     "Pronamic\\Helper" => ZOGO_PUNCHIN_ROOT . '/pronamic-framework'
-] );
+) );
 
-$autoload->register_folders( [
+$autoload->register_folders( array(
     ZOGO_PUNCHIN_ROOT . '/lib'
-] );
+) );
 
 $autoload->register();
 
@@ -41,7 +41,5 @@ $autoload->register();
 // START PLUGIN //
 //////////////////
 
-$plugin = new Zogo_Punchin_Plugin();
-
-if ( is_admin() )
-    $admin = new Zogo_Punchin_Admin();
+new Zogo_Punchin_Plugin();
+new Zogo_Punchin_Admin();

@@ -4,31 +4,25 @@ class Zogo_Punchin_Admin {
     
     public function __construct() {
         
-        add_action( 'add_meta_boxes', array( $this, 'meta_boxes' ) );
+        add_action( 'admin_menu', array( $this, 'menu' ) );
     }
     
-    public function meta_boxes() {
+    public function menu() {
         
-        add_meta_box( 
-            'zogo_punchin_main_metabox', 
-            __( 'Timecard Details', 'zogo-punchin-domain' ), 
-            array( $this, 'view_main_metabox' ), 
-            'zogo_punchin', 
-            'advanced', 
-            'high' 
+        add_menu_page( 
+            __( 'Timecards', 'zogo-punchin-domain' ),
+             __( 'Timecards', 'zogo-punchin-domain' ), 
+             'manage_options', 
+             'zogo-punchin-timecards', 
+             array( $this, 'view_timecards_page' ) 
         );
     }
     
-    public function view_main_metabox() {
+    public function view_timecards_page() {
         
         $view = new Pronamic_Base_View( ZOGO_PUNCHIN_ROOT . '/views/Zogo_Punchin_Admin' );
         $view
-            ->set_view( 'view_main_metabox' )
-            ->set( 'nonce', $nonce )
-            ->render();   
-    }
-    
-    public function save_main_metabox() {
-        
+            ->set_view( 'view_timecards_page' )
+            ->render();
     }
 }
