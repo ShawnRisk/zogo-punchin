@@ -21,6 +21,11 @@ class Zogo_Punchin_Admin {
     
     public function view_main_metabox() {
         
+        $view = new Pronamic_Base_View( ZOGO_PUNCHIN_ROOT . '/views/Zogo_Punchin_Admin' );
+        $view
+            ->set_view( 'view_main_metabox' )
+            ->set( 'nonce', $nonce )
+            ->render();   
     }
     
     public function save_main_metabox() {
