@@ -185,7 +185,7 @@ class Pronamic_Base_Autoload {
      */
     public function autoload( $class_name ) {
         // Get the class name into folder structure
-        $prepared_class_name = str_replace( ['\\', '_'], DIRECTORY_SEPARATOR, $class_name );
+        $prepared_class_name = str_replace( array( '\\', '_' ), DIRECTORY_SEPARATOR, $class_name );
         
         if ( $file = $this->_check_folders( $prepared_class_name ) ) {
             require_once $file;        
