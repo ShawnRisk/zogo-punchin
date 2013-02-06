@@ -5,8 +5,14 @@ class Zogo_Punchin_Admin {
     public function __construct() {
         
         add_action( 'admin_menu', array( $this, 'menu' ) );
+     	add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ));
         
     }
+	
+	public function scripts() {
+		wp_register_script( 'zogo-punchin-admin', ZOGO_PUNCHIN_ROOT . '/assets/admin/zogo.punchin.admin.js', array( 'jquery' ) );
+		wp_enqueue_script('zogo-punchin-admin');
+	}
     
     public function menu() {
         
