@@ -69,13 +69,14 @@ class Pronamic_Base_Autoload {
                     
                     $existing_component_version = $this->get_component_version( $this->_components[$name], $name );
                     $new_component_version = $this->get_component_version( $directory, $name );
-                    
+
                     if ( $new_component_version > $existing_component_version ) {
                         $this->_components[$name] = $directory;  
                     }
                     
                 } else {
                     $this->_components[$name] = $directory;    
+
                 }
                 
             }
@@ -185,8 +186,8 @@ class Pronamic_Base_Autoload {
      */
     public function autoload( $class_name ) {
         // Get the class name into folder structure
-        $prepared_class_name = str_replace( array( '\\', '_' ), DIRECTORY_SEPARATOR, $class_name );
-        
+        $prepared_class_name = str_replace( array( "\\", '_' ) , DIRECTORY_SEPARATOR, $class_name );
+
         if ( $file = $this->_check_folders( $prepared_class_name ) ) {
             require_once $file;        
         } else if ( $file = $this->_check_classes( $class_name ) ) {
@@ -207,7 +208,6 @@ class Pronamic_Base_Autoload {
         
         foreach ( $this->_folders as $folder ) {
             $path = $folder . DIRECTORY_SEPARATOR . $class_name . '.php';
-            
             if ( is_readable( $path ) )
                 return $path;
         }
@@ -242,15 +242,17 @@ class Pronamic_Base_Autoload {
     private function _check_components( $class_name ) {
         
         $components = array_keys( $this->_components );
-        
+
         foreach ( $components as $component ) {
-            $position = strpos( $class_name, $component );
+            $component_prep = str_replace( '\\', DIRECTORY_SEPARATOR, $component );
+            $position = strpos( $class_name, $component_prep );
             
             if ( $position !== false ) {
                 // Use the directory of this registered component
-                $directory = $this->_components[$component];    
+                $directory = $this->_components[$component];  
+
                 $path = $directory . DIRECTORY_SEPARATOR . $class_name . '.php';
-                
+
                 if ( file_exists( $path ) )
                     return $path;
             }
