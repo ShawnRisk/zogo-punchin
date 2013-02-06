@@ -1,8 +1,9 @@
 //Sliding Up and Down Information.
 
 jQuery(document).ready(function($){
-  $(".usertimecard").click(function(e){
-	  e.preventDefault();
-      $(".timecardslide").slideToggle();
-  });
+	$(".timecardslide").hide()
+	$(".usertimecard").click(function(e){
+	  //e.preventDefault();
+	  $(this).closest('td').nextSibling().slideToggle();
+	});
 });

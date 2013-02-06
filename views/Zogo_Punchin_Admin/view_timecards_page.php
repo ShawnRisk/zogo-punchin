@@ -34,7 +34,7 @@
                     <td>
                         <?php $status = zogo_punchin_status( $user->ID ); ?>
                         <?php if ( 1 == $status ) : ?>
-                            <p>CURRENTLY CHECKED IN!</p>
+                            <p>CURRENTLY CLOCKED IN!</p>
                         <?php endif;?>
                     </td>
                 </tr>

@@ -21,7 +21,8 @@ class Zogo_Punchin_Admin {
              __( 'Timecards', 'zogo-punchin-domain' ), 
              'manage_options', 
              'zogo-punchin-timecards', 
-             array( $this, 'view_timecards_page' ) 
+             array( $this, 'view_timecards_page' ),
+			 ZOGO_PUNCHIN_URL . '/images/timecards.png'
         );
     }
     
