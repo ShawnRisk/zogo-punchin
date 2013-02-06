@@ -44,4 +44,6 @@ $autoload->register();
 new Zogo_Punchin_Plugin();
 new Zogo_Punchin_Admin();
 
+//include( ZOGO_PUNCHIN_ROOT . '/inc/functions.php' ););
+
 include( ZOGO_PUNCHIN_ROOT . '/inc/functions.php' );

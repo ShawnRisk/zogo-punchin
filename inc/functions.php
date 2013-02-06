@@ -4,6 +4,9 @@
 // FUNCTIONS //
 ///////////////
 
+wp_register_script( 'zogo-punchin-admin', ZOGO_PUNCHIN_ROOT . '/assets/admin/zogo.punchin.admin.js', array( 'jquery' ) );
+wp_enqueue_script('zogo-punchin-admin');
+
 /**
  * Gets all recorded timesheet information for the user
  * 

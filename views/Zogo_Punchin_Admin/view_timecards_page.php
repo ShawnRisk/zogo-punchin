@@ -13,8 +13,8 @@
             <tbody>
                 <?php foreach ( $users as $user ) : ?>
                 <tr>
-                    <td><?php echo $user->display_name; ?></td>
-                    <td>
+                    <td><a href="#" class="usertimecard"><?php echo $user->display_name; ?></a></td>
+                    <td class="timecardslide">
                         <?php $timecard = zogo_punchin_timecard( $user->ID ); ?>
                         <table class="form-table">
                         <?php foreach ( $timecard as $state => $values ) : ?>
