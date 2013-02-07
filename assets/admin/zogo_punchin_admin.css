@@ -1,0 +1,63 @@
+/**
+ * ================
+ * ==   Timecard View     ==
+ * ================
+ */
+
+.zogo_punchin_timecard_table {
+    
+}
+
+    .zogo_punchin_timecard_user {
+        padding:10px;
+        background:#6bdd51;
+        display:block;
+        border-radius:10px;
+        color:#fff;
+        margin:10px;
+    }
+    
+        .zogo_punchin_timecard_user_active {
+            background:#dd5151;   
+        }
+        
+        .zogo_punchin_timecard_user:hover {
+            color:#fff;
+        }
+    
+    .zogo_punchin_user_time_table_element {
+        width:60%;    
+    }
+    
+        .zogo_punchin_user_time_table {
+            display:none;
+        }
+        
+            .zogo_punchin_user_time_table table {
+                
+            }
+            
+                .zogo_punchin_user_time_table table tr {
+                    
+                }
+                
+                    .zogo_punchin_user_time_table table tr td {
+                        
+                    }
+        
+        .zogo_punchin_user_status {
+            
+        }
+    
+    .zogo_punchin_timecard_table tr {
+        
+    }
+    
+        .zogo_punchin_timecard_table tr th {
+            text-align:center;
+        }
+    
+        .zogo_punchin_timecard_table tr td {
+            vertical-align:middle;
+            text-align:center;
+        }

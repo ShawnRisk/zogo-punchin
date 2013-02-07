@@ -1,9 +1,9 @@
 //Sliding Up and Down Information.
 
-jQuery(document).ready(function($){
-	$(".timecardslide").hide()
-	$(".usertimecard").click(function(e){
-	  //e.preventDefault();
-	  $(this).closest('td').nextSibling().slideToggle();
-	});
+jQuery(function($) {
+	
+    $('.zogo_punchin_timecard_user').click(function(e) {
+        $(this).closest('tr').find('.zogo_punchin_user_time_table').slideToggle();
+    });
+    
 });

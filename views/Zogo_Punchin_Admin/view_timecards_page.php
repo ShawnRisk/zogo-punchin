@@ -13,23 +13,25 @@
             <tbody>
                 <?php foreach ( $users as $user ) : ?>
                 <tr>
-                    <td><a href="#" class="usertimecard"><?php echo $user->display_name; ?></a></td>
-                    <td class="timecardslide">
-                        <?php $timecard = zogo_punchin_timecard( $user->ID ); ?>
-                        <table class="form-table">
-                        <?php foreach ( $timecard as $state => $values ) : ?>
-                            <tr>
-                                <th><?php _e( ucfirst( $state ), 'zogo-punchin-domain' ); ?></th>
-                                <td>
-                                    <ul>
-                                        <?php foreach ( $values as $unix_time ) : ?>
-                                            <li><?php echo date( 'd-m-Y h:i:s', $unix_time ); ?></li>
-                                        <?php endforeach; ?>
-                                    </ul>
-                                </td>
-                            </tr>
-                        <?php endforeach;?>
-                        </table>
+                    <td><a href="#" class="zogo_punchin_timecard_user"><?php echo $user->display_name; ?></a></td>
+                    <td class="zogo_punchin_user_time_table_element">
+                        <div class="zogo_punchin_user_time_table">
+                            <?php $timecard = zogo_punchin_timecard( $user->ID ); ?>
+                            <table class="form-table">
+                            <?php foreach ( $timecard as $state => $values ) : ?>
+                                <tr>
+                                    <th><?php _e( ucfirst( $state ), 'zogo-punchin-domain' ); ?></th>
+                                    <td>
+                                        <ul>
+                                            <?php foreach ( $values as $unix_time ) : ?>
+                                                <li><?php echo date( 'd-m-Y h:i:s', $unix_time ); ?></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            <?php endforeach;?>
+                            </table>
+                        </div>
                     </td>
                     <td>
                         <?php $status = zogo_punchin_status( $user->ID ); ?>
