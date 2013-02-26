@@ -33,17 +33,10 @@
             display:none;
         }
         
-            .zogo_punchin_user_time_table table {
-                
+            .zogo_punchin_time_table_list-holder {
+                float:left;
+                width:50%;
             }
-            
-                .zogo_punchin_user_time_table table tr {
-                    
-                }
-                
-                    .zogo_punchin_user_time_table table tr td {
-                        
-                    }
         
         .zogo_punchin_user_status {
             

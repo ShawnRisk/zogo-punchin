@@ -19,10 +19,10 @@ function zogo_punchin_timecard( $user_id = null ) {
         $user_id = get_current_user_id();
     
     $timecard = get_the_author_meta( 'zogo_punchin_timecard', $user_id );
-    
+
     if ( ! is_array( $timecard ) || empty( $timecard ) )
         $timecard = array();
-    
+
     return $timecard;
 }
 
