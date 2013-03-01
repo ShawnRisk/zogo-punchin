@@ -25,9 +25,9 @@ if ( ! class_exists( 'Pronamic_Base_Autoload' ) )
 
 $autoload = Pronamic_Base_Autoload::get_instance();
 
-$autoload->register_components( array(
-	"Pronamic\\Base"   => ZOGO_PUNCHIN_ROOT . '/pronamic-framework',
-	"Pronamic\\Helper" => ZOGO_PUNCHIN_ROOT . '/pronamic-framework'
+$autoload->register_components( array( 
+    "Pronamic\\Base"   => ZOGO_PUNCHIN_ROOT . '/pronamic-framework',
+    "Pronamic\\Helper" => ZOGO_PUNCHIN_ROOT . '/pronamic-framework'
 ) );
 
 $autoload->register_folders( array(
@@ -44,4 +44,4 @@ $autoload->register();
 new Zogo_Punchin_Plugin();
 new Zogo_Punchin_Admin();
 
-include( ZOGO_PUNCHIN_ROOT . '/inc/functions.php' );ons.php' );
+include( ZOGO_PUNCHIN_ROOT . '/inc/functions.php' );

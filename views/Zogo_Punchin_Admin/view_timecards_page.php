@@ -14,26 +14,24 @@
             </thead>
             <tbody>
                 <?php foreach ( $users as $user ) : ?>
-				<?php $timecard = zogo_punchin_timecard( $user->ID ); ?>
+                <?php $timecard = zogo_punchin_timecard( $user->ID ); ?>
                 <tr>
-					<td><a href="#" class="zogo_punchin_timecard_user"><?php echo $user->display_name; ?></a></td>
-					<td class="zogo_punchin_user_time_table_element">
+                    <td><a href="#" class="zogo_punchin_timecard_user"><?php echo $user->display_name; ?></a></td>
+                    <td class="zogo_punchin_user_time_table_element">
                         <div class="zogo_punchin_user_time_table">
-
-							<?php foreach ( $timecard as $date => $in_outs ) : ?>
-
-								<h2><?php echo $date; ?></h2>
-
-								<?php foreach ( $in_outs as $key => $times ) : ?>
-									<div class="zogo_punchin_time_table_list-holder">
-										<ul>
-											<?php foreach ( $times as $time ) : ?>
-												<li>date<?php echo date( 'd-m-Y h:i:s', $time ); ?></li>
-											<?php endforeach;?>
-										</ul>
-									</div>
-								<?php endforeach;?>
-							<?php endforeach ;?>
+                            <?php foreach ( $timecard as $date => $in_outs ) : ?>
+                            	<h2><?php echo $date; ?></h2>
+                                <?php foreach ( $in_outs as $key => $times ) : ?>
+                                	<div class="zogo_punchin_time_table_list-holder">
+                                    	<ul>
+                                        	<?php foreach ( $times as $time ) : ?>
+                                            	<li><?php echo date( 'd-m-Y h:i:s', $time ); ?></li>
+                                                <li><?php echo $completedarraryhours ?></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php endforeach; ?>
                         </div>
                     </td>
                     <td>

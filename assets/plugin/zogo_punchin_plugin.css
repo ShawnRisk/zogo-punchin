@@ -15,6 +15,7 @@
         border-radius:10px;
         color:#fff;
         margin:10px;
+		text-decoration: none;
     }
     
         .zogo_punchin_timecard_user_active {
@@ -35,12 +36,18 @@
 			
 			.zogo_punchin_user_time_table h2 {
 				clear: both;
+				background: none;
+				width: 500px;
 			}
         
             .zogo_punchin_time_table_list-holder {
                 float:left;
 				width:50%;
             }
+			
+				.zogo_punchin_time_table_list-holder ul li {
+					list-style: none;
+				}
                     
         .zogo_punchin_user_status {
             
